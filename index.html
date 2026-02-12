@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Engel 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+/* BODY */
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(to bottom,#8b2e5f,#f65e9b,#cb1a1a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  overflow-x:hidden;
+  color:#fff;
+}
+
+/* Animate background gradient */
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* HERO */
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  text-shadow: 0 0 10px #fff, 0 0 25px #f65e9b;
+}
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:5rem;
+  margin-bottom:0.5rem;
+  animation:fadeInUp 2s ease forwards;
+}
+header p{
+  font-size:1.5rem;
+  animation:fadeInUp 2s ease 0.5s forwards;
+  opacity:0;
+}
+
+/* SECTIONS */
+section{
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+/* Scroll reveal */
+.hidden{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  margin-top:40px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  width:4px;
+  height:100%;
+  background:linear-gradient(to bottom,#f65e9b,#d69ddb);
+  transform:translateX(-50%);
+}
+.event{
+  width:45%;
+  padding:20px;
+  background:rgba(75,0,75,0.75);
+  border-left:4px solid #f65e9b;
+  border-radius:15px;
+  margin:20px 0;
+  position:relative;
+  backdrop-filter: blur(8px);
+  box-shadow:0 10px 25px rgba(246,94,155,0.4);
+  transition:0.3s;
+}
+.event.left{left:0;}
+.event.right{left:55%;}
+.event h3{
+  color:#ffdfff;
+  margin-bottom:10px;
+  text-shadow:0 0 5px #f65e9b;
+}
+.event p{
+  color:#fff;
+  text-shadow:0 0 3px #d69ddb;
+  line-height:1.6;
+  font-size:1.05rem;
+}
+
+/* BUTTONS */
+button{
+  padding:15px 35px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(45deg,#f65e9b,#ff91c1);
+  color:white;
+  font-size:1.2rem;
+  cursor:pointer;
+  transition:0.3s;
+  margin:10px;
+  box-shadow:0 6px 20px rgba(246,94,155,0.4);
+  position:absolute;
+}
+button:hover{
+  transform:scale(1.1) rotate(-2deg);
+  box-shadow:0 10px 25px rgba(246,94,155,0.6);
+}
+
+/* QUESTION SECTION */
+#questionSection{
+  position:relative;
+  height:350px;
+  text-align:center;
+}
+
+/* RESPONSE TEXT */
+#response{
+  margin-top:80px;
+  font-size:1.8rem;
+  font-weight:bold;
+  text-shadow:0 0 5px #d69ddb;
+}
+
+/* HEARTS */
+.heart{
+  position:fixed;
+  top:-20px;
+  font-size:20px;
+  animation:fall linear forwards;
+  pointer-events:none;
+  opacity:0.8;
+  color:#f65e9b;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* FIREWORKS */
+.firework{
+  position:fixed;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  pointer-events:none;
+  animation:explode 1s ease-out forwards;
+}
+@keyframes explode{
+  to{
+    transform:translate(var(--x),var(--y)) scale(0);
+    opacity:0;
+  }
+}
+
+/* VIDEO SECTION */
+.video-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+
+.video-box{
+  position:relative;
+  width:100%;
+  max-width:800px;
+  aspect-ratio:16/9;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(246,94,155,0.4);
+  border:4px solid #ff91c1;
+  background:linear-gradient(135deg,#f65e9b,#ff91c1);
+  animation:glow 3s ease-in-out infinite alternate;
+}
+@keyframes glow{
+  0%{box-shadow:0 15px 40px rgba(246,94,155,0.4);}
+  100%{box-shadow:0 20px 50px rgba(255,145,193,0.6);}
+}
+
+.video-box video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px;
+  font-size:1rem;
+  color:#fff;
+  text-shadow:0 0 8px #f65e9b,0 0 15px #d69ddb;
+}
+
+/* Animations */
+@keyframes fadeInUp{
+  0%{opacity:0; transform:translateY(50px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>My Engel 💖</h1>
+  <p>Our Love Story</p>
+</header>
+
+<section class="hidden">
+  <h2>🎥 Our Video</h2>
+  <p>A little piece of us… just press play 💕</p>
+  <div class="video-wrapper">
+    <div class="video-box">
+      <video controls poster="preview.jpg">
+        <source src="Love.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="hidden">
+  <h2>💌 My Love Letter</h2>
+  <p>To My Angel,</p>
+  <p>Happy Valentine’s Day ❤️</p>
+  <p>I just wanted to say… you mean so much to me. Every time I think of you, I can’t help but smile. You make my days better just by being you and honestly, I don’t know what I’d do without you. I love you so much for your laugh, your little quirks, the way you make everything feel easier and brighter. You’re my favourite person and I hope today reminds you just how much you’re loved.</p>
+  <p>Can’t wait to see you later 😘</p>
+</section>
+
+<section class="hidden">
+  <h2>📖 Our Story</h2>
+  <div class="timeline">
+
+    <div class="event left hidden">
+      <h3>How We Met</h3>
+      <p>We met with a swipe on an App 😂</p>
+    </div>
+
+    <div class="event right hidden">
+      <h3>When I fell in love with you</h3>
+      <p>The first time I saw you in person 😍</p>
+    </div>
+
+    <div class="event left hidden">
+      <h3>Special Memory</h3>
+      <p>The night I opened up to you for first time 🫶</p>
+    </div>
+
+    <div class="event right hidden">
+      <h3>How Long We've Been Together</h3>
+      <p>2 years 6 months and 22 days</p>
+    </div>
+
+    <div class="event left hidden">
+      <h3>Most elaborate prank</h3>
+      <p>Making me scared of meeting your mom 😑</p>
+    </div>
+
+    <div class="event right hidden">
+      <h3>When I realized I want a future with you.</h3>
+      <p>When I saw how hard you would fight for us.</p>
+    </div>
+
+    <div class="event left hidden">
+      <h3>Everything I love about you</h3>
+      <p>Your smile, your eyes, your sense of humor and the fact that you love me for the way I am.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="questionSection" class="hidden">
+  <h2>❤️ Will you be my valentine?</h2>
+  <button onclick="yesClick()" style="left:30%; top:150px;">YES 💖</button>
+  <button id="noBtn" style="left:60%; top:150px;">NO 💔</button>
+  <div id="response"></div>
+</section>
+
+<footer class="hidden">
+  Made with LOVE for My Engel 😘
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+
+// Fireworks
+function launchFireworks(){
+  for(let i=0;i<120;i++){
+    const fw=document.createElement("div");
+    fw.classList.add("firework");
+    fw.style.background=`hsl(${Math.random()*360},70%,80%)`;
+    fw.style.left="50vw";
+    fw.style.top="50vh";
+    fw.style.setProperty("--x",(Math.random()*600-300)+"px");
+    fw.style.setProperty("--y",(Math.random()*600-300)+"px");
+    document.body.appendChild(fw);
+    setTimeout(()=>fw.remove(),1200);
+  }
+}
+
+// Yes button
+function yesClick(){
+  document.getElementById("response").innerHTML="She said YES 💖😍";
+  launchFireworks();
+}
+
+// No button movement
+const noBtn=document.getElementById("noBtn");
+const container=document.getElementById("questionSection");
+
+noBtn.addEventListener("mouseover",()=>{
+  const c=container.getBoundingClientRect();
+  const b=noBtn.getBoundingClientRect();
+
+  const maxX=c.width - b.width - 10;
+  const maxY=c.height - b.height - 10;
+
+  const x=Math.random()*maxX;
+  const y=Math.random()*maxY;
+
+  // Smooth glide
+  noBtn.style.transition="all 0.3s ease";
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+});
+
+// Floating hearts
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="💗";
+  heart.style.fontSize=(Math.random()*20+20)+"px";
+
+  const side = Math.random() < 0.5 ? "left" : "right";
+  heart.style.left = side === "left" ? Math.random()*10 + "vw" : 90 + Math.random()*10 + "vw";
+  heart.style.animationDuration=(Math.random()*3+3)+"s";
+  heart.style.transform = `rotate(${Math.random()*360}deg)`;
+  
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),5000);
+}
+setInterval(createHeart,150);
+</script>
+
+</body>
+</html>
