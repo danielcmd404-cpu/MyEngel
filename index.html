@@ -195,12 +195,6 @@ button:hover{
   100%{box-shadow:0 20px 50px rgba(255,145,193,0.6);}
 }
 
-.video-box video{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
 /* FOOTER */
 footer{
   text-align:center;
@@ -215,6 +209,16 @@ footer{
   0%{opacity:0; transform:translateY(50px);}
   100%{opacity:1; transform:translateY(0);}
 }
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+  h1{font-size:3rem;}
+  header p{font-size:1.2rem;}
+  .event{width:90% !important; left:0 !important; margin:20px auto;}
+  button{font-size:1rem; padding:10px 25px;}
+  #questionSection{height:auto; padding-bottom:50px;}
+  .video-box{max-width:95%; aspect-ratio:auto;}
+}
 </style>
 </head>
 <body>
@@ -228,11 +232,13 @@ footer{
   <h2>🎥 Our Video</h2>
   <p>A little piece of us… just press play 💕</p>
   <div class="video-wrapper">
-    <div class="video-box">
-      <video controls poster="preview.jpg">
-        <source src="Love.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div class="video-box" id="videoBox">
+      <!-- Preview Image -->
+      <div id="videoPreview" style="position:relative; width:100%; height:100%; cursor:pointer;">
+        <img src="preview.jpg" style="width:100%; height:100%; object-fit:cover; border-radius:25px;">
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+                    font-size:3rem; color:white; text-shadow:0 0 10px #f65e9b;">▶️</div>
+      </div>
     </div>
   </div>
 </section>
@@ -366,6 +372,18 @@ function createHeart(){
   setTimeout(()=>heart.remove(),5000);
 }
 setInterval(createHeart,150);
+
+// Video preview click
+document.getElementById('videoPreview').addEventListener('click', function(){
+  const videoBox = document.getElementById('videoBox');
+  videoBox.innerHTML = `
+    <iframe 
+      src="https://drive.google.com/file/d/1QjBG1aQjHqxcEPIOnDkbtmlVvIPrAN1E/preview" 
+      allow="autoplay" allowfullscreen
+      style="width:100%; height:100%; border:none; border-radius:25px;">
+    </iframe>
+  `;
+});
 </script>
 
 </body>
